@@ -6,9 +6,9 @@ public class Board {
     private final Integer[][] initialBoardState_;
     private Integer[][] currentBoardState_;
 
-    public Board(BoardReader boardReader) {
-        initialBoardState_ = boardReader.readBoard();
-        currentBoardState_ = initialBoardState_.clone();
+    public Board(Integer[][] initialBoardState) {
+        initialBoardState_ = initialBoardState;
+        currentBoardState_ = initialBoardState;
     }
 
     public boolean isCellModifiable(Coordinates at) {
