@@ -7,10 +7,10 @@ public class BoardTest {
 
     private BoardProvider provider = new BoardProvider() {
         public Board createBoard() {
-            Integer[][] boardState = {
-                    { 0, 1 },
-                    { 2, 0 },
-                    { 1, 3 }
+            Character[][] boardState = {
+                    { '0', '1' },
+                    { '2', '0' },
+                    { '1', '3' }
             };
             return new Board(boardState);
         };
@@ -19,10 +19,10 @@ public class BoardTest {
 
     @Test
     public void testGetCellValue() {
-        assertThat(underTest.getCellValue(new Coordinates(0, 0))).isEqualTo(0);
-        assertThat(underTest.getCellValue(new Coordinates(1, 0))).isEqualTo(2);
-        assertThat(underTest.getCellValue(new Coordinates(0, 1))).isEqualTo(1);
-        assertThat(underTest.getCellValue(new Coordinates(1, 1))).isEqualTo(0);
+        assertThat(underTest.getCellValue(new Coordinates(0, 0))).isEqualTo('0');
+        assertThat(underTest.getCellValue(new Coordinates(1, 0))).isEqualTo('2');
+        assertThat(underTest.getCellValue(new Coordinates(0, 1))).isEqualTo('1');
+        assertThat(underTest.getCellValue(new Coordinates(1, 1))).isEqualTo('0');
     }
 
     @Test
@@ -41,13 +41,13 @@ public class BoardTest {
         Coordinates coords = new Coordinates(0, 0);
         Board modifiableBoard = provider.createBoard();
         
-        assertThat(modifiableBoard.getCellValue(coords)).isEqualTo(0);
+        assertThat(modifiableBoard.isCellModifiable(coords));
         
         // when
-        modifiableBoard.setCellValue(4, coords);
+        modifiableBoard.setCellValue('4', coords);
         
         // then
-        assertThat(modifiableBoard.getCellValue(coords)).isEqualTo(4);
+        assertThat(modifiableBoard.getCellValue(coords)).isEqualTo('4');
     }
 
     @Test

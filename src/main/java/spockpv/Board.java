@@ -3,23 +3,23 @@ package spockpv;
 public class Board {
     /* Represents Sudoku board and its state */
 
-    private final Integer[][] initialBoardState_;
-    private Integer[][] currentBoardState_;
+    private final Character[][] initialBoardState_;
+    private Character[][] currentBoardState_;
 
-    public Board(Integer[][] initialBoardState) {
+    public Board(Character[][] initialBoardState) {
         initialBoardState_ = initialBoardState;
         currentBoardState_ = initialBoardState;
     }
 
     public boolean isCellModifiable(Coordinates at) {
-        return initialBoardState_[at.x()][at.y()] == 0;
+        return initialBoardState_[at.x()][at.y()] == '0';
     }
 
-    public void setCellValue(Integer to, Coordinates at) {
+    public void setCellValue(Character to, Coordinates at) {
         currentBoardState_[at.x()][at.y()] = to;
     }
 
-    public Integer getCellValue(Coordinates from) {
+    public Character getCellValue(Coordinates from) {
         return currentBoardState_[from.x()][from.y()];
     }
 

@@ -6,10 +6,10 @@ public class ConsoleDisplayModuleTest {
 
     private BoardProvider provider = new BoardProvider() {
         public Board createBoard() {
-            Integer[][] boardState = {
-                    { 0, 1 },
-                    { 2, 0 },
-                    { 1, 3 }
+            Character[][] boardState = {
+                    { '0', '1' },
+                    { '2', '0' },
+                    { '1', '3' }
             };
             return new Board(boardState);
         };
