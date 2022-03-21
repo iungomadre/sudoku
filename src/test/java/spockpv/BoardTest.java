@@ -29,13 +29,13 @@ public class BoardTest {
     public void testSetCellValue() {
         // given
         Coordinates coords = new Coordinates(0, 0);
-        Board modifiableBoard = provider.createBoard();
+        Board localUnderTest = provider.createBoard();
         
         // when
-        modifiableBoard.setCellValue('4', coords);
+        localUnderTest.setCellValue('4', coords);
         
         // then
-        assertThat(modifiableBoard.getCellValue(coords)).isEqualTo('4');
+        assertThat(localUnderTest.getCellValue(coords)).isEqualTo('4');
     }
 
     @Test
