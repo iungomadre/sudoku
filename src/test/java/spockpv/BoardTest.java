@@ -26,22 +26,10 @@ public class BoardTest {
     }
 
     @Test
-    public void testIsCellModifiable() {
-        assertThat(underTest.isCellModifiable(new Coordinates(0, 0))).isTrue();
-    }
-
-    @Test
-    public void testIsNotCellModifiable() {
-        assertThat(underTest.isCellModifiable(new Coordinates(1, 0))).isFalse();
-    }
-
-    @Test
     public void testSetCellValue() {
         // given
         Coordinates coords = new Coordinates(0, 0);
         Board modifiableBoard = provider.createBoard();
-        
-        assertThat(modifiableBoard.isCellModifiable(coords));
         
         // when
         modifiableBoard.setCellValue('4', coords);
