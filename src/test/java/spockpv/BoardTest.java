@@ -9,7 +9,8 @@ public class BoardTest {
         public Board createBoard() {
             Integer[][] boardState = {
                     { 0, 1 },
-                    { 2, 0 }
+                    { 2, 0 },
+                    { 1, 3 }
             };
             return new Board(boardState);
         };
@@ -47,5 +48,29 @@ public class BoardTest {
         
         // then
         assertThat(modifiableBoard.getCellValue(coords)).isEqualTo(4);
+    }
+
+    @Test
+    public void testWidth() {
+        // given
+        Integer expected = 3;
+
+        // when
+        Integer actual = underTest.width();
+
+        // then
+        assertThat(actual).isEqualTo(expected);
+    }
+
+    @Test
+    public void testHeight() {
+        // given
+        Integer expected = 2;
+
+        // when
+        Integer actual = underTest.height();
+
+        // then
+        assertThat(actual).isEqualTo(expected);
     }
 }

@@ -23,4 +23,12 @@ public class Board {
         return currentBoardState_[from.x()][from.y()];
     }
 
+    public Integer width() {
+        return initialBoardState_.length;
+    }
+
+    public Integer height() {
+        return initialBoardState_[0].length;
+    }
+
 }
