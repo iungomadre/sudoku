@@ -4,16 +4,7 @@ import org.junit.Test;
 
 public class ConsoleDisplayModuleTest {
 
-    private BoardProvider provider = new BoardProvider() {
-        public Board createBoard() {
-            Character[][] boardState = {
-                    { '0', '1' },
-                    { '2', '0' },
-                    { '1', '3' }
-            };
-            return new Board(boardState);
-        };
-    };
+    private final BoardProvider provider = new MockBoardProvider();
     private final Board board = provider.createBoard();
     private final DisplayModule underTest = new ConsoleDisplayModule();
 
