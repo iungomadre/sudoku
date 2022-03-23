@@ -120,4 +120,25 @@ public class BoardTest {
         // then
         assertThat(underTest).isEqualTo(clone);
     }
+    
+    @Test
+    public void testCountRowSums() {
+        // given
+        Integer[] rowSums = underTest.countRowSums();
+
+        // then
+        assertThat(rowSums[0]).isEqualTo(3);
+        assertThat(rowSums[1]).isEqualTo(4);
+    }
+
+    @Test
+    public void testCountColumnSums() {
+        // given
+        Integer[] columnSums = underTest.countColumnSums();
+
+        // then
+        assertThat(columnSums[0]).isEqualTo(1);
+        assertThat(columnSums[1]).isEqualTo(2);
+        assertThat(columnSums[2]).isEqualTo(4);
+    }
 }

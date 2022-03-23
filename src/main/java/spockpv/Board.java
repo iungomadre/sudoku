@@ -25,6 +25,34 @@ public class Board implements Cloneable {
         return boardState_[0].length;
     }
 
+    public Integer[] countRowSums() {
+        Integer[] sums = new Integer[this.height()];
+        Integer sum;
+
+        for (int y = 0; y < this.height(); y++) {
+            sum = 0;
+            for (int x = 0; x < this.width(); x++) {
+                sum = sum + Character.getNumericValue(boardState_[x][y]);
+            }
+            sums[y] = sum;
+        }
+        return sums;
+    }
+
+    public Integer[] countColumnSums() {
+        Integer[] sums = new Integer[this.width()];
+        Integer sum;
+
+        for (int x = 0; x < this.width(); x++) {
+            sum = 0;
+            for (int y = 0; y < this.height(); y++) {
+                sum = sum + Character.getNumericValue(boardState_[x][y]);
+            }
+            sums[x] = sum;
+        }
+        return sums;
+    }
+
     public boolean equals(Object o) {
         if (o == this) {
             return true;
