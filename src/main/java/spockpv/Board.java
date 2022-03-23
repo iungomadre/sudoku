@@ -1,6 +1,6 @@
 package spockpv;
 
-public class Board {
+public class Board implements Cloneable {
     /* Represents Sudoku board and its state */
 
     private Character[][] boardState_;
@@ -33,7 +33,6 @@ public class Board {
             return false;
         }
 
-        // TODO refactor
         Board compared = (Board)o;
         for (int i = 0; i < compared.boardState_.length; i++) {
             for (int j = 0; j < compared.boardState_[i].length; j++) {
@@ -43,5 +42,19 @@ public class Board {
             }
         }
         return true;
+    }
+
+    @Override
+    public Object clone() {
+
+        Character[][] newBoardState = new Character[this.boardState_.length][this.boardState_[0].length];
+
+        for (Integer i = 0; i < this.boardState_.length; i++) {
+            for (Integer j = 0; j < this.boardState_[i].length; j++) {
+                newBoardState[i][j] = this.boardState_[i][j];
+            }
+        }
+
+        return new Board(newBoardState);
     }
 }

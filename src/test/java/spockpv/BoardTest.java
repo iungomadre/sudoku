@@ -1,6 +1,7 @@
 package spockpv;
 
 import org.junit.Test;
+import static org.junit.Assert.assertNotSame;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class BoardTest {
@@ -100,5 +101,23 @@ public class BoardTest {
 
         // then
         assertThat(underTest).isNotEqualTo(notBoard);
+    }
+
+    @Test
+    public void testCloneIsNotSame() {
+        // given
+        Board clone = (Board)underTest.clone();
+
+        // then
+        assertNotSame(underTest, clone);
+    }
+
+    @Test
+    public void testCloneEquals() {
+        // given
+        Board clone = (Board)underTest.clone();
+
+        // then
+        assertThat(underTest).isEqualTo(clone);
     }
 }
