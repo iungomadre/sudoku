@@ -9,9 +9,7 @@ public class App {
 
   /**
    * Main method that runs game
-   *
    * @param args unused
-   * @return nothing
    */
   public static void main(String[] args) {
 
@@ -25,7 +23,6 @@ public class App {
 
   /**
    * Runs whole game synchronously until won
-   *
    * @param game object to be played
    * @param ui user interface
    */
