@@ -51,4 +51,9 @@ public class ConsoleUserInterface implements UserInterface {
         }
         System.out.print("+\n");
     }
+
+    @Override
+    public void promptGameWon(Integer points) {
+        System.out.println("You have won in " + points + " moves!");
+    }
 }
