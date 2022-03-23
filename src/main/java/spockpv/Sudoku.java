@@ -4,7 +4,7 @@ package spockpv;
  *
  * @author  Filip Wiśniewski
  */
-public class App {
+public class Sudoku {
 
   /**
    * Main method that runs game
