@@ -1,6 +1,5 @@
 package spockpv;
 /**
- * <h1>Sudoku</h1>
  * Sudoku is a simple console game that displays board on standard output
  *
  * @author  Filip Wiśniewski
