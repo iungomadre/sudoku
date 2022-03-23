@@ -10,8 +10,14 @@ public class BoardTest {
         { '2', '0' },
         { '1', '3' }
     };
+    final Character[][] differentInitialBoardState = {
+        { 'x', 'y' },
+        { 'x', 'y' },
+        { 'x', 'y' }
+    };
 
     private final Board underTest = new Board(initialBoardState);
+    private final Board differentUnderTest = new Board(differentInitialBoardState);
 
     @Test
     public void testGetCellValue() {
@@ -65,5 +71,34 @@ public class BoardTest {
 
         // then
         assertThat(actual).isEqualTo(expected);
+    }
+
+    @Test
+    public void testIsEqual() {
+        // given
+        Board first = new Board(initialBoardState);
+        Board second = new Board(initialBoardState);
+
+        // then
+        assertThat(first).isEqualTo(second);
+    }
+
+    @Test
+    public void testIsNotEqual() {
+        assertThat(underTest).isNotEqualTo(differentUnderTest);
+    }
+
+    @Test
+    public void testIsEqualSameObject() {
+        assertThat(underTest).isEqualTo(underTest);
+    }
+
+    @Test
+    public void testIsNotEqualDifferentObject() {
+        // given 
+        Integer notBoard = 2;
+
+        // then
+        assertThat(underTest).isNotEqualTo(notBoard);
     }
 }
