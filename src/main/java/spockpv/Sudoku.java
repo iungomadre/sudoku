@@ -30,10 +30,11 @@ public class Sudoku {
 
     while (!game.isWon()) {
       movesNumber++;
-
       ui.draw(game.getCurrentBoard());
 
-      if (!game.tryPutValue(ui.getCoords(), ui.getValue())) {
+      while (!game.tryPutValue(ui.getCoords(), ui.getValue())) {
+        movesNumber++;
+        ui.draw(game.getCurrentBoard());
         ui.promptUnmodifiableCell();
       }
     }
