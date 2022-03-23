@@ -5,8 +5,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class BoardTest {
 
-    private final BoardProvider provider = new MockBoardProvider();
-    private final Board underTest = provider.createBoard();
+    final Character[][] initialBoardState = {
+        { '0', '1' },
+        { '2', '0' },
+        { '1', '3' }
+    };
+
+    private final Board underTest = new Board(initialBoardState);
 
     @Test
     public void testGetCellValue() {
@@ -19,14 +24,23 @@ public class BoardTest {
     @Test
     public void testSetCellValue() {
         // given
-        Coordinates coords = new Coordinates(0, 0);
-        Board localUnderTest = provider.createBoard();
+        Character[][] localBoardState = {
+            { '2', '0' },
+            { '3', '0' },
+            { '4', '0' }
+        };
+        Board localUnderTest = new Board(localBoardState);
+
+        Coordinates testedCoordinates = new Coordinates(0, 0);
+        Character testedValue = 'x';
+
+        assertThat(localUnderTest.getCellValue(testedCoordinates)).isNotEqualTo(testedValue);
         
         // when
-        localUnderTest.setCellValue('4', coords);
+        localUnderTest.setCellValue(testedValue, testedCoordinates);
         
         // then
-        assertThat(localUnderTest.getCellValue(coords)).isEqualTo('4');
+        assertThat(localUnderTest.getCellValue(testedCoordinates)).isEqualTo(testedValue);
     }
 
     @Test
