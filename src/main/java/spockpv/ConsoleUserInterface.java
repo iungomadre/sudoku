@@ -29,6 +29,7 @@ public class ConsoleUserInterface implements UserInterface {
 
     @Override
     public void draw(Board board) {
+        System.out.print("\033[H\033[2J");  // clears console
         drawDelimiter(board.width());
         for (Integer row = 0; row < board.height(); row++) {
             drawLine(board, row);
