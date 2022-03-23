@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"spockpv","l":"App"},{"p":"spockpv","l":"BasicBoardProvider"},{"p":"spockpv","l":"Board"},{"p":"spockpv","l":"BoardProvider"},{"p":"spockpv","l":"ConsoleUserInterface"},{"p":"spockpv","l":"Coordinates"},{"p":"spockpv","l":"Game"},{"p":"spockpv","l":"UserInterface"}];updateSearchResults();
