@@ -2,3 +2,5 @@
 target
 resources
 .DS_Store
+build
+.gradle

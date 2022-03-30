@@ -22,7 +22,7 @@
 - replacable UI
 - replacable game board provider
 - uses JUnit and AssertJ for unit testing
-- uses Maven for project management
+- uses Gradle for project management
 - formatted using clang-format
 - automatic documantation generated using Javadoc
 
@@ -39,4 +39,4 @@ You can download latest release from <a href="https://github.com/iungomadre/sudo
 
 ## Requirements
 You need to have following packages installed in order to run the app:
-- Java 17
+- Java 18
