@@ -1,15 +1,15 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'gradle:jdk17'
+            label 'docker'
+        }
+    }
     
     stages {
         stage('build') {
             steps {
-                echo 'building'
-            }
-        }
-        stage('test') {
-            steps {
-                echo 'testing'
+                sh ./gradlew build --no-daemon
             }
         }
         stage('deploy') {
